@@ -1,0 +1,14 @@
+def plusMinus(arr):
+    pos = len([1 for a in arr if a>0 ])/len(arr)
+    neg = len([1 for a in arr if a<0 ])/len(arr)
+    zero = len([1 for a in arr if a==0])/len(arr)
+    print(pos)
+    print(neg)
+    print(zero)
+    # Write your code here
+   
+
+if __name__ == '__main__':
+    n = int(input().strip())
+    arr = list(map(int, input().rstrip().split()))
+    plusMinus(arr)
