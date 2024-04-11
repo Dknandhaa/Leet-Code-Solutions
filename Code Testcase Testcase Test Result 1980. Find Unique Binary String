@@ -1,0 +1,15 @@
+class Solution:
+    def findDifferentBinaryString(self, nums: List[str]) -> str:
+        str = {x for x in nums}
+        def track(i,check):
+            if i == len(nums):
+                res = "".join(check)
+                return None if res in str else res
+            res = track(i+1,check)
+            if res: return res
+
+            check[i] = "1"
+            res = track(i+1,check)
+            if res: return res
+
+        return track(0,["0" for s in nums]) 
